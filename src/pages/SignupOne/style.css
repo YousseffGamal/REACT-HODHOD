@@ -1,0 +1,26 @@
+.pl-\[286px\] {
+    padding-left: 0px !important;
+}
+.h-\[695px\] {
+    height: 1147px !important;
+}
+@media only screen and (max-width: 767px) {
+
+
+    .h-\[695px\] {
+        height: 940px !important;
+        
+    }
+    #text{
+      
+    }
+    
+#gray{
+    width: 200px;
+}
+}
+
+/* .blind{
+    mix-blend-mode:multiply;
+
+} */

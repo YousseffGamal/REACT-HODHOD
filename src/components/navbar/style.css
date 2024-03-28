@@ -1,0 +1,92 @@
+.navbar-container {
+    width: 100%;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-grow: 1; /* Expand to fill available space */
+    justify-content: center; /* Horizontally center the links */
+    gap: 50px;
+    font-weight: bold;
+  }
+  
+  .logo {
+    height: 51px;
+    width: 92px;
+    margin-right: 20px;
+  }
+  
+  .menu-icon {
+    cursor: pointer;
+    display: block;
+  }
+  
+  .hamburger {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .hamburger path {
+    stroke: #000; /* Change color to black */
+  }
+  
+  .open {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease; /* Add smooth transition for rotation */
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+  text-align: center;
+    background-color: #ffffff; /* Adjust background color as needed */
+    border: 1px solid #ccc; /* Add border for dropdown */
+    border-top: none; /* Remove top border to avoid overlap */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for dropdown */
+    z-index: 1000; /* Ensure dropdown is above other content */
+    transform: rotate(360deg); /* Equal to rotateZ(45deg) */
+  }
+  
+  .dropdown.open {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dropdown-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    padding: 10px 20px; /* Add padding to dropdown links */
+  }
+  
+  .dropdown-link:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+  }
+ 
+  @media screen and (max-width: 768px) {
+
+    .responsive{
+    width: 100% !important;
+    }
+    .res-img{
+      width: 90% !important;
+    }
+    #responsive-last{
+      width: 341px !important;
+    }
+  }
+  
+  .pb-\[2314px\]{
+    padding-bottom: 100px !important;
+  }

@@ -1,0 +1,36 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+  .move{
+  margin-bottom: 130px;
+  }
+  .textt{
+    margin-left:30px;
+    margin-top: 15px;
+  }
+
+  .slide-in {
+    animation: slideInAnimation 0.5s ease-out;
+  }
+  
+  @keyframes slideInAnimation {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+   
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+     
+    }
+  }
+  
+  .zorar{
+    border: 1px solid #1B6381;
+    border-radius: 105px;
+    width: 202px;
+    height: 36px;
+    font-weight: bold;
+  }
