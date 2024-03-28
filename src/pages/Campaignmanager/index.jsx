@@ -84,6 +84,7 @@ const CampaignmanagerPage = () => {
             >
               Search
             </Button>
+            
             <div
               className="common-pointer flex flex-col items-center justify-start max-w-[1440px] mt-20 md:px-10 sm:px-5 px-[125px] w-full"
               onClick={() => navigate("/campaign")}
