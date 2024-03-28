@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, Img, Text } from "components";
 
 const SignupPage = () => {
-  const navigate = useNavigate();
+
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,9 +17,7 @@ const SignupPage = () => {
   const [x, setX] = useState('');
   const [Linkedin, setLinkedin] = useState('');
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
+ 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
@@ -68,7 +66,7 @@ const SignupPage = () => {
         <div className="login-box" >
       <form onSubmit={handleSubmit}>
         <div className="user-box">
-          <input type="text" name="username" value={name} onChange={handleNameChange} required />
+          <input type="text" name="username" value={name} onChange={(e)=>setName(e.target.value)} required />
           <label>Name</label>
         </div>
         <div className="user-box">
