@@ -1,0 +1,374 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #E3E8EE !important;
+}
+@font-face{
+    font-family: SemiBold;
+    src: url(./fonts/Montserrat-SemiBold.ttf);
+}
+@font-face{
+    font-family: Mediumn;
+    src: url(./fonts/Montserrat-Medium.ttf);
+}
+@font-face{
+    font-family: Boldd;
+    src: url(./fonts/Montserrat-Bold.ttf);
+}
+@font-face{
+    font-family: ExtraLight;
+    src: url(./fonts/Montserrat-ExtraLight.ttf);
+}
+@font-face{
+    font-family: Lightt;
+    src: url(./fonts/Montserrat-Light.ttf);
+}
+@font-face{
+    font-family: Regular;
+    src: url(./fonts/Montserrat-Regular.ttf);
+}
+.nav-link {
+color: #000000 !important;
+font-family: SemiBold;
+font-size: 13px !important;
+}
+.login:hover{
+    background-color: transparent !important;
+    
+}
+.login{
+    position: relative;
+    right: 100px;
+    font-family:Mediumn !important ;
+
+}
+.navbar-brand{
+    position: relative ;
+    left: 100px ;
+}
+.navv{
+    background-color: #E3E8EE !important;
+}
+
+.Landing{
+    background-color: #E3E8EE !important;
+}
+.landing-title{
+    margin-top: 200px;
+    margin-bottom: 32px;
+    color: #1B6381;
+    font-size: 65px;
+    font-family: Boldd;
+    white-space: nowrap;
+}
+.Landing p{
+    color: #000000;
+    font-size: 27px;
+    font-family: ExtraLight;
+}
+.landingBtn-f{
+    margin-top: 32px;
+    font-size: 22px !important;
+    font-family: Mediumn !important;
+    
+}
+.landingBtn-f:hover{
+background-color: #EA8357 !important;
+color: #E3E8EE !important;
+    
+}
+.landingBtn-s{
+    margin-top: 32px;
+    font-size: 22px !important;
+    font-family: SemiBold !important;
+    transition: 0.5s !important;
+}
+.landingBtn-s:hover{
+    background-color: transparent !important;
+    color: #000000 !important;
+    transition: 0.5s !important;
+}
+.video{
+    background-color: #d6dde4;
+    height: 1100px;
+   
+}
+.video h1{ 
+color: #EA8357 !important;
+font-size: 40px !important;
+font-family: Lightt !important;
+text-align: center;
+margin-top: 80px;
+}
+.clients{
+    background-color: #d6dde4 !important;
+    /* margin-top: 100px; */
+    height: 375px;
+}
+.clients h1{
+    font-size: 32px !important;
+    font-family: Regular !important;
+    text-align: center;
+    color: #1B6381;
+    margin-top: 60px;
+}
+.TESTEMONIALS{
+    background-image: url(./images/cl_back.png);
+    background-size: contain;
+    background-repeat: repeat;
+    height: 721px;
+ 
+}
+.textH{
+    color: #EA8357;
+    font-size: 32px;
+    font-family: Regular;
+    text-align: center;
+    margin-top: 80px !important;
+    margin-bottom: 80px;
+}
+.card-title{
+    color: #000000 !important;
+    font-size: 24px;
+    text-align: center;
+    font-family: Mediumn !important;
+    margin-top: 13px !important;
+    margin-bottom: 13px !important;
+}
+.card{
+background-color: #D6DEE2 !important;
+width: 272px !important;
+height: 200px !important;
+border: 1px solid #EA8357 !important;
+border-radius: 15px !important;
+}
+.card-text{
+    color: #000000 !important;
+    font-size: 15px;
+    text-align: center;
+    font-family: Mediumn !important;
+    margin-top: 13px !important;
+}
+footer{
+     background-color: #1B6381;
+     height: 382px;
+    
+     background-size: cover;
+    background-position: center center;
+    width: 100%;
+}
+footer h1{
+    margin-top: 80px;
+    color: #FFFFFF;
+    font-size: 30px !important;
+    font-family: SemiBold !important;
+    text-align: center;
+}
+footer p{
+margin-top: 10px !important;
+    color: #FFFFFF;
+    font-size: 20px !important;
+    font-family: Regular !important;
+    text-align: center;
+}
+.FooterBtn{
+    font-size: 20px !important;
+    font-family: SemiBold !important;
+    margin-top: 30px !important;
+}
+footer span{
+   color: #FFFFFF;
+    font-size: 20px;
+    font-family: Regular !important;
+    text-align: center !important;
+    margin-top: 70px;
+}
+.grid{
+    background-color: #E3E8EE;
+    height: 1248px;
+}
+.gird-sup{
+    margin-top: 200px;
+    color: #1B6381 !important;
+    font-size: 28px;
+    font-family: Mediumn !important;
+    margin-bottom: 10px;
+}
+.grip-title{
+    color: #000000 !important;
+    font-size: 55px;
+    margin-bottom: 10px;
+
+    font-family: SemiBold !important;
+}
+.grid-last{
+    color: #000000 !important;
+    font-size: 21px;
+    font-family: Regular !important;
+  
+}
+.grid-card{
+    margin-top: 100px;
+    width: 694px;
+    height: 454px;
+    background-color: #191919;
+    border-radius: 30px ;
+    display: flex;
+   
+}
+.grid-card h1{
+    color: #E3E8EE !important;
+    font-size: 29px;
+    font-family: SemiBold !important;
+    white-space: nowrap;
+ 
+}
+.grid-card p{
+    color: #E3E8EE !important;
+    font-size: 15px;
+    font-family: Regular !important;
+    white-space: nowrap;
+}
+.gridSecond-card{
+    width: 290px;
+    height: 476px;
+    background-color: #EA8357;
+    border-radius: 20px;
+    position: relative !important;
+}
+.gridSecond-card h1{
+   margin-bottom: 10px;
+    color: #E3E8EE !important;
+    font-size: 25px;
+    font-family: SemiBold !important;
+    text-align: center !important;
+}
+.gridSecond-card p{
+    color: #E3E8EE !important;
+    font-size: 14px;
+    font-family: Regular !important;
+    text-align: center !important;
+}
+.gridThird-card{
+    width: 562px;
+    height: 476px;
+    background-color: #191919;
+    border-radius: 20px;
+    position: relative !important;
+}
+.gridThird-card h1{
+   
+    color: #E3E8EE !important;
+    font-size: 25px;
+    font-family: SemiBold !important;
+    text-align: center !important;
+}
+.gridThird-card p{
+    color: #E3E8EE !important;
+    font-size: 14px;
+    font-family: Regular !important;
+    text-align: center !important;
+}
+.gridFourth-card{
+    width: 290px;
+    height: 476px;
+    background-color: #191919;
+    border-radius: 20px;
+    position: relative !important;
+}
+.gridFourth-card h1{
+    color: #E3E8EE !important;
+    font-size: 25px;
+    font-family: SemiBold !important;
+    text-align: center !important;
+}
+.gridFourth-card p{
+    color: #E3E8EE !important;
+    font-size: 14px;
+    font-family: Regular !important;
+    text-align: center !important;
+}
+@media screen and (max-width: 768px) {
+    .login,
+    .navbar-brand {
+        position: relative !important;
+        right: 1000vh !important;
+     
+    }
+    .nav-link {
+    margin-left: 20px !important;
+        }
+        .landing-title{
+            font-size: 34px;
+            margin-top: 50px !important;
+            margin-bottom: 10px !important;
+        }
+        .Landing p{
+            font-size: 15px;
+           
+        }
+        .clients img{
+            margin: 0 !important;
+        }
+        .video{
+            height: 500px !important;
+        }
+        .clients{
+            height: 240px;
+            position: relative;
+    margin-top: 50px;
+        }
+        .card{
+            margin-top: 30px !important;
+            margin-left: auto;
+            margin-right: auto;
+          
+        }
+        .TESTEMONIALS{
+            height: auto !important;
+        }
+        .last{
+            margin-bottom: 80px;
+        }
+        footer{
+          
+            height: auto;
+        }
+        .grid-card{
+
+            display: flex;
+            flex-direction: column !important;
+            width: 100%;
+            margin: 30px 0 0 0  !important;
+        }
+        .grid-card img{
+            width: 80% !important;
+            left: 40px;
+            margin-top: 23px !important;
+        }
+      .remove{
+        margin: 0 !important;
+        text-align: center;
+      }
+      .gridSecond-card{
+        position: relative !important;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .grid{
+        height: auto;
+      }
+      .gridThird-card{
+        margin-top: 50px;
+        width: 100% !important;
+      }
+      .gridFourth-card{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        margin-bottom:30px;
+      }
+}
