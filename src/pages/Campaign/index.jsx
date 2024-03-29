@@ -69,7 +69,7 @@ const CampaignPage = () => {
                 Campaign 1
               </Text>
             </div>
-            <div className="flex md:flex-col flex-row gap-[35px] items-start justify-start w-auto md:w-full">
+            <div className="flex md:flex-col flex-row gap-[35px] items-start justify-start w-auto md:w-full ccc">
               <div style={{width:'370px',height:'230px'}} className="bg-gray-300_01 flex flex-col gap-2.5 items-start justify-start rounded-[20px] w-auto responsive">
                 <Text
                 
@@ -136,14 +136,14 @@ const CampaignPage = () => {
         </div>
 
         {/* start */}
-        <div style={{marginTop:'100px'}} className="flex flex-col md:gap-10 gap-[447px] items-center justify-start w-full">
+        <div style={{marginTop:'100px'}} className=" flex flex-col md:gap-10 gap-[447px] items-center justify-start w-full">
           
         <List
         className="flex flex-col gap-[50px] items-center max-w-[1190px] mx-auto md:px-5 w-full"
         orientation="vertical"
       >
-<div className={`animated-box bg-gray-300 ${showFacebook ? 'block' : 'hidden'} ${isAnimating ? 'slide-in' : ''} flex flex-1 flex-col items-start justify-start max-w-[1190px] pb-7 pt-[77px] rounded-[20px] w-full`}>
-                <div className="flex flex-col gap-6 items-start justify-start w-full">
+<div className={` animated-box bg-gray-300 ${showFacebook ? 'block' : 'hidden'} ${isAnimating ? 'slide-in' : ''} flex flex-1 flex-col items-start justify-start max-w-[1190px] pb-7 pt-[77px] rounded-[20px] w-full`}>
+                <div className="yala flex flex-col gap-6 items-start justify-start w-full">
                   <div className="flex flex-row sm:gap-10 gap-[417px] items-center justify-start w-[51%] md:w-full">
                     <div className="flex flex-col items-start justify-start sm:px-5 px-[34px] w-auto">
                       <Text
