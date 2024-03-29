@@ -4,7 +4,7 @@ import CampaignPage from './pages/New folder/index'
 import Navbar  from "./pages/navbar/navbar";
 import Home from "./pages/Home/index"
 function App() {
-  return <Home />;
+  return <Routes />;
 }
 
 export default App;

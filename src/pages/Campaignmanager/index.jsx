@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useNavigate } from "react-router-dom";
-
+import "./style.css"
 import { Button, Img, Line, List, Text } from "components";
 
 const CampaignmanagerPage = () => {
@@ -26,7 +26,7 @@ const CampaignmanagerPage = () => {
                   alt="thumbsup"
                 />
                 <Button
-                  className="cursor-pointer font-medium leading-[normal] min-w-[200px] text-base text-center"
+                  className="cursor-pointer font-medium leading-[normal] min-w-[223px] text-base text-center"
                   shape="round"
                   color="light_blue_900"
                   size="xs"
@@ -84,7 +84,6 @@ const CampaignmanagerPage = () => {
             >
               Search
             </Button>
-            
             <div
               className="common-pointer flex flex-col items-center justify-start max-w-[1440px] mt-20 md:px-10 sm:px-5 px-[125px] w-full"
               onClick={() => navigate("/campaign")}
