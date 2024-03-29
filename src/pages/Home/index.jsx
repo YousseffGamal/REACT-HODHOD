@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Button } from "react-bootstrap";
 import logo from "./Frame 2.png";
 import "./style.css";
@@ -15,14 +15,84 @@ import DigitalMarketingVideo from "./Digital Marketing Services - Promo Video.mp
 import ClientsImg from "./images/Frame 16.png";
 import Card from "react-bootstrap/Card";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useSpring, animated } from '@react-spring/web'
+
+
 
 const Home = () => {
-  const [searchQuery, setSearchQuery] = useState(""); // State for the search query
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.querySelector('.your-section-class');
+      if (section) {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (sectionTop < windowHeight) {
+          setIsVisible(true);
+          window.removeEventListener('scroll', handleScroll); // Remove listener once animation is triggered
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
+  
+  const [searchQuery, setSearchQuery] = useState(""); // State for the search query
+  const springProps = useSpring({
+    from: { opacity: 0, transform: 'translateY(-50px)' },
+    to: { opacity: 1, transform: 'translateY(0)' },
+    config: { duration: 1000 }, // Adjust duration as needed
+  });
+  const leftSpring = useSpring({
+    from: { opacity: 0, transform: 'translateX(-100px)' },
+    to: { opacity: 1, transform: 'translateX(0)' },
+    config: { duration: 1000 }, // Adjust duration as needed
+  });
+
+  const rightSpring = useSpring({
+    from: { opacity: 0, transform: 'translateX(100px)' },
+    to: { opacity: 1, transform: 'translateX(0)' },
+    config: { duration: 1000 }, // Adjust duration as needed
+  });
+  const bottomSpring = useSpring({
+    from: { opacity: 0, transform: 'translateY(100px)' },
+    to: { opacity: 1, transform: 'translateY(0)' },
+    config: { duration: 1000 }, // Adjust duration as needed
+  });
+  const popUpSpring = useSpring({
+    from: { opacity: 0, transform: 'scale(0.8)' },
+    to: { opacity: 1, transform: 'scale(1)' },
+    config: { tension: 20, friction: 10 }, // Adjust tension and friction for slower and smoother animation
+  });
+  
+  const ScrollPopUp = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? 'scale(1)' : 'scale(0.8)',
+    config: { tension: 50, friction: 10 }, // Adjust tension and friction for slower and smoother animation
+  });
+
+  const [animationProps, setAnimationProps] = useSpring(() => ({
+    x: 0,
+    y: 0,
+    config: { mass: 10, tension: 550, friction: 140 }
+  }));
+
+  const handleMouseMove = (e) => {
+    const { clientX, clientY } = e;
+    setAnimationProps({ x: clientX, y: clientY });
+  };
+  
   return (
     <>
       {/* start of nav */}
-      <Navbar style={{ backgroundColor: "#E3E8EE" }} expand="lg">
+     <animated.div style={popUpSpring}>
+     <Navbar style={{ backgroundColor: "#E3E8EE" }} expand="lg">
         <Navbar.Brand href="#">
           <img src={logo} alt="" />
         </Navbar.Brand>
@@ -62,22 +132,24 @@ const Home = () => {
           </form>
         </Navbar.Collapse>
       </Navbar>
+     </animated.div>
       {/* end of nav */}
       {/* start of landing */}
       <section className="Landing">
         <Container>
           <Row>
             <Col>
-              <h1 className="landing-title">
-                From Content To <br />
-                Marketing Analysis
-              </h1>
-              <p>
+            <animated.h1 style={springProps} className="landing-title">
+      From Content To <br />
+      Marketing Analysis
+    </animated.h1>
+              <animated.p style={leftSpring}>
                 Create stunning photos with the AI generator <br />
                 and use our state of the art analysis to <br />
                 track your progress
-              </p>
-              <div style={{ display: "flex", gap: "32px" }}>
+              </animated.p>
+          <animated.div style={bottomSpring }>
+          <div style={{ display: "flex", gap: "32px" }}>
                 <Button
                   className="landingBtn-f"
                   style={{
@@ -106,9 +178,12 @@ const Home = () => {
                   Join us
                 </Button>
               </div>
+          </animated.div>
             </Col>
             <Col>
-              <img src={LandingImg} alt="" />
+            <animated.div className="anime"  style={popUpSpring}>
+      <img src={LandingImg} alt="Landing Image" />
+    </animated.div>
             </Col>
           </Row>
         </Container>
@@ -128,22 +203,25 @@ const Home = () => {
             }}
           >
             <Col>
-              <div
-                style={{
-                  border: "6px solid #EA8357",
-                  display: "inline-block",
-                  marginTop: "80px",
-                }}
-              >
-                <video autoPlay muted loop src={DigitalMarketingVideo}></video>
-              </div>
+            <animated.div style={ScrollPopUp}>
+      <div
+        style={{
+          border: '6px solid #EA8357',
+          display: 'inline-block',
+          marginTop: '80px',
+        }}
+        className="your-section-class"
+      >
+        <video autoPlay muted loop src={DigitalMarketingVideo}></video>
+      </div>
+    </animated.div>
             </Col>
           </Row>
         </Container>
       </section>
       {/* end of video section */}
       {/* start of grid section */}
-<section className="grid">
+<animated.section style={popUpSpring} className="grid">
 <Container>
   <Row>
     <Col>
@@ -241,7 +319,7 @@ accounts from one place
     </Col>
   </Row>
 </Container>
-</section>
+</animated.section>
       {/* end of grid section */}
 
       {/* start of clients section */}
@@ -274,7 +352,9 @@ accounts from one place
           <Row>
             <h1 className="textH">TESTEMONIALS</h1>
           </Row>
-          <Row>
+          <animated.div style={ScrollPopUp} className="your-section-class">
+
+      <Row>
             <Col sm={3}>
             <Card >
     
@@ -406,6 +486,7 @@ and sales.
   </Card>
             </Col>
           </Row>
+      </animated.div>
         </Container>
       </section>
       {/* end of TESTEMONIALS */}
