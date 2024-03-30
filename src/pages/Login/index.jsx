@@ -1,26 +1,32 @@
 import React from "react";
 import './style.css';
-import { Button, Img, Text } from "components";
 import { useState } from 'react'; // Import useState if needed
-import { useTranslation } from 'react-i18next';
 import Navbar from "../navbar/navbar";
+import axios from "axios";
 
 const LoginPage = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Add your login logic here using 'username' and 'password' states
-    console.log('Submitted:', { username, password });
+    try {
+      const response = await axios.post('http://localhost:3000/login', {
+        emailAddress: email,
+        password: password
+      });
+      if (response.data.token) {
+        try {
+          localStorage.setItem("accessToken", response.data.token);
+        } catch (e) {
+          alert("Error occured ! Please try again.")
+        }
+      }
+      
+  }catch(e){
+      alert("Error occured ! Please try again.")
+    }
   };
   const [isChecked, setChecked] = useState(false);
 
@@ -37,11 +43,11 @@ const LoginPage = () => {
         <div className="login-box" >
       <form onSubmit={handleSubmit}>
         <div className="user-box">
-          <input type="text" name="username" value={username} onChange={handleUsernameChange} required />
+          <input type="text" name="username"  onChange={(e)=>setEmail(e.target.value)} required />
           <label>Email</label>
         </div>
         <div className="user-box">
-          <input type="password" name="password" value={password} onChange={handlePasswordChange} required />
+          <input type="password" name="password"  onChange={(e)=>setPassword(e.target.value)} required />
           <label>Password</label>
         </div>
         <div>
@@ -54,7 +60,7 @@ const LoginPage = () => {
         onChange={handleCheckboxChange}
         style={{backgroundColor: "#132c44",width:'12.65px' , height:'12.65px'}}
       />
-      <label  style={{color:'white',fontSize:'15px', fontSize:'13px'}} htmlFor="vehicle1"> Remeber me</label>
+      <label  style={{color:'white',fontSize:'15px'}} htmlFor="vehicle1"> Remeber me</label>
       <br />
     </div>
         <button id="log" style={{fontSize:'16px'}} className="submit" type="submit">

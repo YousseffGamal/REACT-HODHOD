@@ -1,9 +1,6 @@
 import React from "react";
-import { useState } from 'react'; // Import useState if needed
 
-import { useNavigate } from "react-router-dom";
-
-import { Button, Img, Text } from "components";
+import { Img, Text } from "components";
 
 const navbar = () => {
 

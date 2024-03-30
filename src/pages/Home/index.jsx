@@ -43,7 +43,6 @@ const Home = () => {
 
 
   
-  const [searchQuery, setSearchQuery] = useState(""); // State for the search query
   const springProps = useSpring({
     from: { opacity: 0, transform: 'translateY(-50px)' },
     to: { opacity: 1, transform: 'translateY(0)' },
@@ -55,11 +54,11 @@ const Home = () => {
     config: { duration: 1000 }, // Adjust duration as needed
   });
 
-  const rightSpring = useSpring({
-    from: { opacity: 0, transform: 'translateX(100px)' },
-    to: { opacity: 1, transform: 'translateX(0)' },
-    config: { duration: 1000 }, // Adjust duration as needed
-  });
+  // const rightSpring = useSpring({
+  //   from: { opacity: 0, transform: 'translateX(100px)' },
+  //   to: { opacity: 1, transform: 'translateX(0)' },
+  //   config: { duration: 1000 }, // Adjust duration as needed
+  // });
   const bottomSpring = useSpring({
     from: { opacity: 0, transform: 'translateY(100px)' },
     to: { opacity: 1, transform: 'translateY(0)' },
@@ -77,16 +76,16 @@ const Home = () => {
     config: { tension: 50, friction: 10 }, // Adjust tension and friction for slower and smoother animation
   });
 
-  const [animationProps, setAnimationProps] = useSpring(() => ({
-    x: 0,
-    y: 0,
-    config: { mass: 10, tension: 550, friction: 140 }
-  }));
+  // const [animationProps, setAnimationProps] = useSpring(() => ({
+  //   x: 0,
+  //   y: 0,
+  //   config: { mass: 10, tension: 550, friction: 140 }
+  // }));
 
-  const handleMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    setAnimationProps({ x: clientX, y: clientY });
-  };
+  // const handleMouseMove = (e) => {
+  //   const { clientX, clientY } = e;
+  //   setAnimationProps({ x: clientX, y: clientY });
+  // };
   
   return (
     <>
@@ -182,7 +181,7 @@ const Home = () => {
             </Col>
             <Col>
             <animated.div className="anime"  style={popUpSpring}>
-      <img src={LandingImg} alt="Landing Image" />
+      <img src={LandingImg} alt="Landing" />
     </animated.div>
             </Col>
           </Row>
