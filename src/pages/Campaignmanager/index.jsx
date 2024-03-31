@@ -16,8 +16,8 @@ const CampaignmanagerPage = () => {
         <div className="flex flex-col md:gap-10 gap-[79px] items-center justify-start w-full">
           <div className="flex flex-col items-center justify-start w-full">
             <div
-              className="bg-cover bg-no-repeat flex flex-col h-[95px] items-start justify-start w-auto md:w-full"
-              style={{ backgroundImage: "url('images/img_toppanel.png')" }}
+              className="bg-cover bg-no-repeat flex flex-col h-[95px] items-start justify-start  md:w-full"
+              style={{ backgroundImage: "url('images/img_toppanel.png')" , width:"100%"}}
             >
               <div className="flex flex-row md:gap-10 items-center justify-between max-w-[1440px] md:px-10 sm:px-5 px-[131px] py-2.5 w-full">
                 <Img
@@ -26,6 +26,7 @@ const CampaignmanagerPage = () => {
                   alt="thumbsup"
                 />
                 <Button
+                
                   className="cursor-pointer font-medium leading-[normal] min-w-[223px] text-base text-center"
                   shape="round"
                   color="light_blue_900"

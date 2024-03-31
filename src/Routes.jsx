@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "pages/Home";
+import Home from "./pages/Home/index";
 import NotFound from "pages/NotFound";
 const Signup = React.lazy(() => import("pages/Signup"));
 const SignupOne = React.lazy(() => import("pages/SignupOne"));

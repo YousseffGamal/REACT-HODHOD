@@ -16,6 +16,7 @@ import ClientsImg from "./images/Frame 16.png";
 import Card from "react-bootstrap/Card";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useSpring, animated } from '@react-spring/web'
+import { Link } from "react-router-dom";
 
 
 
@@ -93,7 +94,8 @@ const Home = () => {
      <animated.div style={popUpSpring}>
      <Navbar style={{ backgroundColor: "#E3E8EE" }} expand="lg">
         <Navbar.Brand href="#">
-          <img src={logo} alt="" />
+     
+          <Link to="/">     <img src={logo} alt="" /> </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -126,7 +128,9 @@ const Home = () => {
               }}
               variant="outline-success"
             >
-              LOG IN
+           <Link to="/login" style={{ textDecoration: "none", color: "inherit" }}>
+          LOG IN
+        </Link>
             </Button>
           </form>
         </Navbar.Collapse>
@@ -174,7 +178,7 @@ const Home = () => {
                   }}
                   variant="outline-success"
                 >
-                  Join us
+          Request a Demo
                 </Button>
               </div>
           </animated.div>

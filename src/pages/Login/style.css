@@ -186,3 +186,11 @@
   }
 }
 
+.log{
+  color: #fff;
+ margin-top: 20px;
+
+}
+.log span{
+  color:  #344048;
+}
