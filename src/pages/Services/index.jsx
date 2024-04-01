@@ -85,7 +85,7 @@ const AboutUs = () => {
         <animated.div style={popUpSpring}>
           <Container fluid style={{ marginTop: "80px" }}>
             <Row>
-              <Col className="imgss" sm={4}></Col>
+              <Col className="imgss" ></Col>
             </Row>
           </Container>
         </animated.div>
@@ -108,7 +108,7 @@ const AboutUs = () => {
             </Col>
           </Row>
           <Row style={{ marginTop: "80px" }}>
-            <Col sm={4}>
+            <Col >
               <Card className="ser-cards">
                 <Card.Img variant="top" src={Card1} />
                 <Card.Body>
@@ -121,7 +121,7 @@ const AboutUs = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col sm={4}>
+            <Col >
               <Card className="ser-cards">
                 <Card.Img variant="top" src={Card2} />
                 <Card.Body>
@@ -134,7 +134,7 @@ const AboutUs = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col sm={4}>
+            <Col >
               <Card className="ser-cards">
                 <Card.Img variant="top" src={Card3} />
                 <Card.Body>
@@ -147,9 +147,7 @@ const AboutUs = () => {
                 </Card.Body>
               </Card>
             </Col>
-          </Row>
-          <Row style={{ marginTop: "2.5rem" }}>
-            <Col sm={4}>
+            <Col >
               <Card className="ser-cards">
                 <Card.Img variant="top" src={Card4} />
                 <Card.Body>
@@ -162,7 +160,7 @@ const AboutUs = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col sm={4}>
+            <Col >
               <Card className="ser-cards">
                 <Card.Img variant="top" src={Card5} />
                 <Card.Body>
@@ -175,7 +173,7 @@ const AboutUs = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col sm={4}>
+            <Col >
               <Card className="ser-cards">
                 <Card.Img variant="top" src={Card6} />
                 <Card.Body>
@@ -189,6 +187,9 @@ const AboutUs = () => {
               </Card>
             </Col>
           </Row>
+          {/* <Row style={{ marginTop: "2.5rem" }}>
+           
+          </Row> */}
         </Container>
       </section>
       {/* end of services section */}
