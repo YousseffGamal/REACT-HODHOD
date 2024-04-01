@@ -37,7 +37,7 @@ const CampaignmanagerPage = () => {
                 </Button>
               </div>
             </div>
-            <div className="flex md:flex-col flex-row md:gap-10 gap-24 items-start justify-center max-w-[1440px] mt-14 md:px-10 sm:px-5 px-[125px] w-full">
+            <div className="haaaaa flex md:flex-col flex-row md:gap-10 gap-24 items-start justify-center max-w-[1440px] mt-14 md:px-10 sm:px-5 px-[125px] w-full">
               <div className="bg-deep_orange-300 h-[247px] md:px-5 relative rounded-[20px] w-[67%] md:w-full">
                 <Img
                   className="h-[247px] m-auto object-cover rounded-[20px] w-full"

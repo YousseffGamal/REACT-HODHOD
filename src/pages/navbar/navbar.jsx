@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import { Navbar, Nav, Button } from "react-bootstrap";
+import logo from "./Frame 2.png";
+import "./style.css";
 
-import { Img, Text } from "components";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import { Link } from "react-router-dom";
 
 const navbar = () => {
 
@@ -8,49 +13,61 @@ const navbar = () => {
   return (
     <>
    
-        <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0] w-auto md:w-full">
-          <div className="flex flex-col items-start justify-start max-w-[1440px] md:px-10 sm:px-5 px-[131px] py-2.5 w-full">
-            <div className="flex md:flex-col flex-row md:gap-10 items-center justify-between max-w-[864px] w-full">
-              <Img
-                className="h-[51px] w-[92px]"
-                src="images/img_thumbsup.svg"
-                alt="thumbsup"
-              />
-              <div className="flex sm:flex-1 sm:flex-col flex-row gap-[50px] items-center justify-center w-auto sm:w-full">
-                <Text
-                  className="text-[13px] text-black-900 w-auto"
-                  size="txtMontserratRomanSemiBold13"
-                >
-                  HOME
-                </Text>
-                <Text
-                  className="text-[13px] text-black-900 w-auto"
-                  size="txtMontserratRomanSemiBold13"
-                >
-                  SERVICES
-                </Text>
-                <Text
-                  className="text-[13px] text-black-900 w-auto"
-                  size="txtMontserratRomanSemiBold13"
-                >
-                  OUR PRODUCTS
-                </Text>
-                <Text
-                  className="text-[13px] text-black-900 w-auto"
-                  size="txtMontserratRomanSemiBold13"
-                >
-                  ABOUT US
-                </Text>
-                <Text
-                  className="text-[13px] text-black-900 uppercase w-auto"
-                  size="txtMontserratRomanSemiBold13"
-                >
-                  Pricing
-                </Text>
-              </div>
-            </div>
-          </div>
-        </div>
+   <Navbar style={{ backgroundColor: "#E3E8EE" }} expand="lg">
+        <Navbar.Brand href="#">
+     
+          <Link to="/">     <img src={logo} alt="" /> </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mx-auto" style={{ gap: "40px" }}>
+       
+            <Nav.Link className="nav-link" href="#">
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+            HOME
+           </Link>
+          
+            </Nav.Link>
+            <Nav.Link className="nav-link" href="#">
+            
+              <Link to="/services" style={{ textDecoration: "none", color: "inherit" }}>
+              SERVICES
+            </Link>
+            </Nav.Link>
+            <Nav.Link className="nav-link" href="#">
+              OUR PRODUCTS
+            </Nav.Link>
+            <Nav.Link className="nav-link" href="#">
+             
+              <Link to="/about" style={{ textDecoration: "none", color: "inherit" }}>
+              ABOUT US
+            </Link>
+            </Nav.Link>
+            <Nav.Link className="nav-link" href="#">
+              Pricing
+            </Nav.Link>
+          </Nav>
+          <form className="form-inline my-2 my-lg-0">
+          <Link to="/login" style={{ textDecoration: "none", color: "inherit" }}>
+            <Button
+              className="login"
+              style={{
+                border: "1px solid #1B6381",
+                width: "138px",
+                height: "36px",
+                borderRadius: "105px",
+                color: "#000000",
+              }}
+              variant="outline-success"
+            >
+         
+          LOG IN
+    
+            </Button>
+            </Link>
+          </form>
+        </Navbar.Collapse>
+      </Navbar>
 
     </>
   );

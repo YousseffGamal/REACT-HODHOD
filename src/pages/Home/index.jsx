@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Nav, Button } from "react-bootstrap";
+import {  Nav, Button } from "react-bootstrap";
 import logo from "./Frame 2.png";
 import "./style.css";
 import Container from "react-bootstrap/Container";
@@ -17,9 +17,10 @@ import Card from "react-bootstrap/Card";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useSpring, animated } from '@react-spring/web'
 import { Link } from "react-router-dom";
-
-
-
+import Navbar  from '../navbar/navbar';
+import Footer from "../footer/index";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 const Home = () => {
 
   const [isVisible, setIsVisible] = useState(false);
@@ -92,49 +93,7 @@ const Home = () => {
     <>
       {/* start of nav */}
      <animated.div style={popUpSpring}>
-     <Navbar style={{ backgroundColor: "#E3E8EE" }} expand="lg">
-        <Navbar.Brand href="#">
-     
-          <Link to="/">     <img src={logo} alt="" /> </Link>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto" style={{ gap: "40px" }}>
-            <Nav.Link className="nav-link" href="#">
-              HOME
-            </Nav.Link>
-            <Nav.Link className="nav-link" href="#">
-              SERVICES
-            </Nav.Link>
-            <Nav.Link className="nav-link" href="#">
-              OUR PRODUCTS
-            </Nav.Link>
-            <Nav.Link className="nav-link" href="#">
-              ABOUT US
-            </Nav.Link>
-            <Nav.Link className="nav-link" href="#">
-              Pricing
-            </Nav.Link>
-          </Nav>
-          <form className="form-inline my-2 my-lg-0">
-            <Button
-              className="login"
-              style={{
-                border: "1px solid #1B6381",
-                width: "138px",
-                height: "36px",
-                borderRadius: "105px",
-                color: "#000000",
-              }}
-              variant="outline-success"
-            >
-           <Link to="/login" style={{ textDecoration: "none", color: "inherit" }}>
-          LOG IN
-        </Link>
-            </Button>
-          </form>
-        </Navbar.Collapse>
-      </Navbar>
+     <Navbar />
      </animated.div>
       {/* end of nav */}
       {/* start of landing */}
@@ -493,51 +452,69 @@ and sales.
         </Container>
       </section>
       {/* end of TESTEMONIALS */}
-      {/* start of footer */}
-      <footer>
-        <Container>
-          <Row>
-            <Col>
-            <h1>
-            Make Awesome Happen
-            </h1>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-            <p>
-            For more information or inquiries don’t hesitate
-            </p>
-            </Col>
-          </Row>
-          <Row style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-       <Col style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-       <Button
-                  className="FooterBtn"
-                  style={{
-                    backgroundColor: "transparent",
-                    border: "1px solid #EA8357",
-                    width: "215px",
-                    height: "53px",
-                    borderRadius: "100px",
-                    color: "#FFFFFF",
-                  }}
-                  variant="outline-success"
-                >
-                CONTACT US
-                </Button>
-       </Col>
-          </Row>
-          <Row>
-<Col style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+      {/* start of package */}
+      {/* <section>
+<Container>
+  <Row>
+<Col lg={8}>
+  <div className="Cardss">
+<div className='Cardd'>
+<h1>
+Basic
+</h1>
+<ul>
+  <li >
 
-<span>
-Copyright © 2023 | Hodhod | All Rights Reserved
-</span>
+      <span style={{color:"#ff6004",marginRight:"10px"}}><FontAwesomeIcon icon={faCheck} /></span> <span>
+      Increase Traffic 130%
+      </span>
+
+
+  </li>
+  <li >
+
+      <span style={{color:"#ff6004",marginRight:"10px"}}><FontAwesomeIcon icon={faCheck} /></span> <span>
+      Increase Traffic 130%
+      </span>
+
+
+  </li>
+  <li >
+
+      <span style={{color:"#ff6004",marginRight:"10px"}}><FontAwesomeIcon icon={faCheck} /></span> <span>
+      Increase Traffic 130%
+      </span>
+
+
+  </li>
+  <li >
+
+      <span style={{color:"#ff6004",marginRight:"10px"}}><FontAwesomeIcon icon={faCheck} /></span> <span>
+      Increase Traffic 130%
+      </span>
+
+
+  </li>
+  <li >
+
+      <span style={{color:"#ff6004",marginRight:"10px"}}><FontAwesomeIcon icon={faCheck} /></span> <span>
+      Increase Traffic 130%
+      </span>
+
+
+  </li>
+</ul>
+</div>
+  </div>
 </Col>
-          </Row>
-        </Container>
-      </footer>
+<Col>
+</Col>
+  </Row>
+</Container>
+      </section> */}
+           {/* end of package */}
+      {/* start of footer */}
+      <Footer />
       {/* end of footer */}
     </>
   );

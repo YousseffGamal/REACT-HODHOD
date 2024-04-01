@@ -3,6 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+::-webkit-scrollbar {
+    width: 7px !important;
+    height: 4px;
+    background: transparent;
+ 
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(234, 131, 87) !important;; 
+    border-radius: 100px !important;
+}
 body{
     /* background-color: #E3E8EE !important; */
     background-image: url(./images/Group\ 20.jpg);
@@ -141,7 +151,7 @@ margin-top: 80px;
     margin-top: 80px !important;
     margin-bottom: 80px;
 }
-.card-title{
+.TESTEMONIALS .card-title{
     color: #000000 !important;
     font-size: 24px;
     text-align: center;
@@ -149,14 +159,14 @@ margin-top: 80px;
     margin-top: 13px !important;
     margin-bottom: 13px !important;
 }
-.card{
+.TESTEMONIALS .card{
 background-color: #D6DEE2 !important;
 width: 272px !important;
 height: 200px !important;
 border: 1px solid #EA8357 !important;
 border-radius: 15px !important;
 }
-.card-text{
+.TESTEMONIALS .card-text{
     color: #000000 !important;
     font-size: 15px;
     text-align: center;
@@ -302,6 +312,30 @@ footer span{
     font-family: Regular !important;
     text-align: center !important;
 }
+/* .Cardd{
+    width: 320px !important;
+    height: 540px !important;
+    padding: 50px 40px;
+    border-radius: 20px;
+    position: relative;
+ 
+    background-color: #ffffff;
+}
+.Cardd h1{
+    margin-bottom: 20px;
+    font-size: 34px;
+    line-height: 44px;
+    font-family: SemiBold !important;
+}
+
+.Cardd span{
+ 
+    font-family: Regular !important;
+    color: #606060;
+}
+.Cardd ul li{
+    margin-bottom: 15px;
+} */
 @media screen and (max-width: 768px) {
     .login,
     .navbar-brand {

@@ -2,3 +2,10 @@
     height: auto !important;
     background-color: transparent !important;
 }
+
+@media screen and (max-width: 768px) {
+    .haaaaa{
+        display: flex !important;
+        flex-direction: column !important;  
+      }
+}

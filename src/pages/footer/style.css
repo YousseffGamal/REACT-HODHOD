@@ -1,0 +1,42 @@
+footer{
+    /* background-color: #1B6381; */
+    height: 382px;
+   background-image: url(./images/Group\ 19.jpg);
+    background-size: cover;
+   background-position: center ;
+   width: 100%;
+}
+footer h1{
+   margin-top: 80px;
+   color: #FFFFFF;
+   font-size: 30px !important;
+   font-family: SemiBold !important;
+   text-align: center;
+}
+footer p{
+margin-top: 10px !important;
+   color: #FFFFFF;
+   font-size: 20px !important;
+   font-family: Regular !important;
+   text-align: center;
+}
+.FooterBtn{
+   font-size: 20px !important;
+   font-family: SemiBold !important;
+   margin-top: 30px !important;
+}
+footer span{
+  color: #FFFFFF;
+   font-size: 20px;
+   font-family: Regular !important;
+   text-align: center !important;
+   margin-top: 70px;
+}
+@media screen and (max-width: 768px) {
+
+       footer{
+         
+           height: auto;
+       }
+    
+}
