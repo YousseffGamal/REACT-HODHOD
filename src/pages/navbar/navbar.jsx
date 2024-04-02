@@ -34,16 +34,16 @@ const navbar = () => {
               SERVICES
             </Link>
             </Nav.Link>
-            <Nav.Link className="nav-link" href="#">
+            {/* <Nav.Link className="nav-link" href="#">
               OUR PRODUCTS
-            </Nav.Link>
+            </Nav.Link> */}
             <Nav.Link className="nav-link" href="#">
              
               <Link to="/about" style={{ textDecoration: "none", color: "inherit" }}>
               ABOUT US
             </Link>
             </Nav.Link>
-            <Nav.Link className="nav-link" href="#">
+            <Nav.Link id='#priceeee' className="nav-link" href="#">
               Pricing
             </Nav.Link>
           </Nav>

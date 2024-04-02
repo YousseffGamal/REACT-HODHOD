@@ -453,65 +453,80 @@ and sales.
       </section>
       {/* end of TESTEMONIALS */}
       {/* start of package */}
-      {/* <section>
-<Container>
-  <Row>
-<Col lg={8}>
-  <div className="Cardss">
-<div className='Cardd'>
-<h1>
-Basic
-</h1>
-<ul>
-  <li >
-
-      <span style={{color:"#ff6004",marginRight:"10px"}}><FontAwesomeIcon icon={faCheck} /></span> <span>
-      Increase Traffic 130%
-      </span>
-
-
-  </li>
-  <li >
-
-      <span style={{color:"#ff6004",marginRight:"10px"}}><FontAwesomeIcon icon={faCheck} /></span> <span>
-      Increase Traffic 130%
-      </span>
-
-
-  </li>
-  <li >
-
-      <span style={{color:"#ff6004",marginRight:"10px"}}><FontAwesomeIcon icon={faCheck} /></span> <span>
-      Increase Traffic 130%
-      </span>
-
-
-  </li>
-  <li >
-
-      <span style={{color:"#ff6004",marginRight:"10px"}}><FontAwesomeIcon icon={faCheck} /></span> <span>
-      Increase Traffic 130%
-      </span>
-
-
-  </li>
-  <li >
-
-      <span style={{color:"#ff6004",marginRight:"10px"}}><FontAwesomeIcon icon={faCheck} /></span> <span>
-      Increase Traffic 130%
-      </span>
-
-
-  </li>
-</ul>
-</div>
+<Container className='package' id='priceeee' fluid>
+<div className="pricing-tables attached">
+    {/* <h1 id="attached-wide">
+      Attached - Wide
+    </h1> */}
+    <div className="row change">
+      <div className="col-sm-4 col-md-3">
+        <div className="plan first">
+          <div className="head">
+            <h2>Starter</h2>
+          </div>
+          <ul className="item-list">
+            <li><strong>20GB</strong> Storage</li>
+            <li><strong>15</strong> Email Addresses</li>
+            <li><strong>5</strong> Domains </li>
+            <li><strong>Endless</strong> Support</li>
+          </ul>
+          <div className="price">
+            <h3><span className="symbol">$</span>19</h3>
+            <h4>per month</h4>
+          </div>
+          <button type="button" className="btn btn-success">Sign Up</button>
+        </div>
+      </div>
+      <div className="col-sm-4 col-md-3 ">
+        <div className="plan recommended mid-card">
+          <div className="head">
+            <h2>Premium</h2>
+          </div>
+          <ul className="item-list">
+            <li><strong>50GB</strong> Storage</li>
+            <li><strong>25</strong> Email Addresses</li>
+            <li><strong>15</strong> Domains</li>
+            <li><strong>Endless</strong> Support</li>
+          </ul>
+          <div className="price">
+            <h3><span className="symbol">$</span>29</h3>
+            <h4 style={{color:"#ffffff"}}>per month</h4>
+          </div>
+          <button type="button" className="btn btn-success">Sign Up</button>
+        </div>
+      </div>
+      <div className="col-sm-4 col-md-3  ">
+        <div className="plan last">
+          <div className="head">
+            <h2>Pro</h2>
+          </div>
+          <ul className="item-list">
+            <li><strong>100GB </strong>Storage</li>
+            <li><strong>50 </strong>Email Addresses</li>
+            <li><strong>25</strong> Domains</li>
+            <li><strong>Endless</strong> Support</li>
+          </ul>
+          <div className="price">
+            <h3><span className="symbol">$</span>49</h3>
+            <h4>per month</h4>
+          </div>
+          <button type="button" className="btn btn-success">Sign Up</button>
+        </div>
+      </div>
+      <div className="col-sm-4 col-md-3  " style={{marginLeft:"0px",marginTop:"100px"}}>
+        <p className='Price-text'>PRICING PLAN
+</p>
+    <h1 className='Price-title'>
+    Unbeatable Pricing <br />
+     Find Your Perfect <br />
+      Plan Now
+    </h1>
+  
+      </div>
+    </div>
   </div>
-</Col>
-<Col>
-</Col>
-  </Row>
+
 </Container>
-      </section> */}
            {/* end of package */}
       {/* start of footer */}
       <Footer />
