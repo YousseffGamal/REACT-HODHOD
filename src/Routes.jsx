@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/index";
 import About from "./pages/About Us/index";
 import Services from "./pages/Services/index";
+import CRM from "./pages//CRM/index";
 import NotFound from "pages/NotFound";
 const Signup = React.lazy(() => import("pages/Signup"));
 const SignupOne = React.lazy(() => import("pages/SignupOne"));
@@ -23,6 +24,7 @@ const ProjectRoutes = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/crm" element={<CRM />} />
         </Routes>
       </Router>
     </React.Suspense>
