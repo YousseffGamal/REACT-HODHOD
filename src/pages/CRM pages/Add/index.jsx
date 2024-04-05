@@ -18,6 +18,8 @@ import avaF from "./images/avatar-2.png";
 import avaT from "./images/avatar-3.png";
 import avaS from "./images/avatar-4.png";
 import avaD from "./images/avatar-5.png";
+import Modal from 'react-bootstrap/Modal';
+
 import {
   faChartBar,
   faFileAlt,
@@ -29,10 +31,10 @@ import {
   faPlus,
   faPlusCircle,
 } from "@fortawesome/free-solid-svg-icons"; // Import the icons you want to use
-import "./crm.css"; // Create a CSS file for your styles and import it here
+import "./add.css"; // Create a CSS file for your styles and import it here
 import Logo from "./images/Frame 2.png";
 
-function App() {
+function Add() {
   const [sidebarActive, setSidebarActive] = useState(false);
 
   const toggleSidebar = () => {
@@ -52,6 +54,10 @@ function App() {
   const handleChange = (event) => {
     setSearchText(event.target.value);
   };
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div>
       {/* Logo */}
@@ -89,7 +95,7 @@ function App() {
         <p className="title-dashbord">MENU</p>
         <ul className="nav flex-column">
           <li className="nav-item">
-            <a className="nav-link active" href="#">
+            <a className="nav-link " href="#">
               {" "}
               <span className="vertical-align">
                 <FontAwesomeIcon icon={faHome} />
@@ -98,12 +104,12 @@ function App() {
             </a>
           </li>
           <li className="nav-item">
-          <a className="nav-link" href="#">
+          <a className="nav-link active" href="#">
   
     <span className="vertical-align">
         <FontAwesomeIcon icon={faPlusCircle} /> {/* Icon for "Add Campaign" */}
     </span>
-    <span className="vertical-align">Add Campaign</span>
+    <span className="vertical-align ">Add Campaign</span>
 </a>
           </li>
           <li className="nav-item">
@@ -203,7 +209,7 @@ function App() {
       {/* Main Content */}
       <div className={`main-content ${sidebarActive ? "active" : ""}`}>
         <Container fluid>
-          <Row style={{ marginBottom: "20px" }}>
+        <Row style={{ marginBottom: "20px" }}>
             <Col>
               <div>
               {/* <input
@@ -303,193 +309,32 @@ function App() {
               </div>
             </Col>
           </Row>
-          <Row>
-            <Col style={{ height: "100%" }} sm={8}>
-              <div className="Top-Cards">
-                <img src={dashboard} alt="" class="left-image" />
-                <div class="text-content">
-                  <h1 className="text-slate-200">Welcome Hamdi 🎉</h1>
-                  <p className="text-slate-400">
-                    A CRM dashboard facilitates your marketing team with a{" "}
-                    <br />
-                    clear overview of key customer relationship management
-                    metrics and enables efficient campaign creation.
-                  </p>
-                  <Button id="Card-btn"> Create Campaign</Button>
-                </div>
-              </div>
-              <div
-                className="rev"
-                style={{ display: "flex", gap: "20px", marginTop: "20px" }}
-              >
-                <Col className="Ana">
-                  <div className="border">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      data-lucide="wallet-2"
-                      class="lucide lucide-wallet-2"
-                    >
-                      <path d="M17 14h.01"></path>
-                      <path d="M7 7h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14"></path>
-                    </svg>
-                  </div>
-                  <div className="numb" style={{ marginTop: "80px" }}>
-                    <h1 className="numbers">$236.18k</h1>
-                    <p>Total Campaign</p>
-                  </div>
-                </Col>
-                <Col className="Ana">
-                  <div className="border">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      data-lucide="wallet-2"
-                      class="lucide lucide-wallet-2"
-                    >
-                      <path d="M17 14h.01"></path>
-                      <path d="M7 7h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14"></path>
-                    </svg>
-                  </div>
-                  <div className="numb" style={{ marginTop: "80px" }}>
-                    <h1 className="numbers">$236.18k</h1>
-                    <p>Total Campaign</p>
-                  </div>
-                </Col>
-                <Col className="Ana">
-                  <div className="border">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      data-lucide="wallet-2"
-                      class="lucide lucide-wallet-2"
-                    >
-                      <path d="M17 14h.01"></path>
-                      <path d="M7 7h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14"></path>
-                    </svg>
-                  </div>
-                  <div className="numb" style={{ marginTop: "80px" }}>
-                    <h1 className="numbers">$236.18k</h1>
-                    <p>Total Campaign</p>
-                  </div>
-                </Col>
-                <Col className="Ana">
-                  <div className="border">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      data-lucide="wallet-2"
-                      class="lucide lucide-wallet-2"
-                    >
-                      <path d="M17 14h.01"></path>
-                      <path d="M7 7h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14"></path>
-                    </svg>
-                  </div>
-                  <div className="numb" style={{ marginTop: "80px" }}>
-                    <h1 className="numbers">$236.18k</h1>
-                    <p>Total Campaign</p>
-                  </div>
-                </Col>
-              </div>
-            </Col>
-
-            <Col sm={4}>
-              <div id="left-card">
-                <h1>Customer Service</h1>
-                <p>28% of the Goal Reached ($25k)</p>
-                <ProgressBar variant="success" now={40} />
-                <span>Top Customer</span>
-                <div style={{ display: "flex" ,marginTop:"20px",gap:"20px"}}>
-                  <div style={{background:"rgb(241 245 249 / var(--tw-bg-opacity));",borderRadius:"9999px"}}>
-                  <img style={{width:"32px",height:"32px"}} src={avaF} alt="" />
-
-                    </div>{" "}
-                  <p className="ddds" style={{color:"black",fontWeight:"bold"}}>
-                    Urrie Arthur
-                    <br />
-                    <span style={{fontSize:"12px"}}>arthur@tailwick.com</span>
-                  </p>
-                  <p>$2,452</p>
-                </div>
-                <div style={{ display: "flex" ,gap:"20px"}}>
-                  <div style={{background:"rgb(241 245 249 / var(--tw-bg-opacity));",borderRadius:"9999px"}}>
-                  <img style={{width:"32px",height:"32px"}} src={avaT} alt="" />
-
-                    </div>{" "}
-                  <p className="ddds" style={{color:"black",fontWeight:"bold"}}>
-                  Natalie Christy
-                    <br />
-                    <span style={{fontSize:"12px"}}>natalie@tailwick.com</span>
-                  </p>
-                  <p>$1,893</p>
-                </div>
-                <div style={{ display: "flex" ,gap:"20px"}}>
-                  <div style={{background:"rgb(241 245 249 / var(--tw-bg-opacity));",borderRadius:"9999px"}}>
-                  <img style={{width:"32px",height:"32px"}} src={avaS} alt="" />
-
-                    </div>{" "}
-                  <p className="ddds" style={{color:"black",fontWeight:"bold"}}>
-                  Laurie Jackson
-
-                    <br />
-                    <span style={{fontSize:"12px"}}>jackson@tailwick.com</span>
-                  </p>
-                  <p>$1,196</p>
-                </div>
-                <div style={{ display: "flex" ,gap:"20px"}}>
-                  <div style={{background:"rgb(241 245 249 / var(--tw-bg-opacity));",borderRadius:"9999px"}}>
-                  <img style={{width:"32px",height:"32px"}} src={avaD} alt="" />
-
-                    </div>{" "}
-                  <p className="ddds" style={{color:"black",fontWeight:"bold"}}>
-                  Michael Torres
-
-                    <br />
-                    <span style={{fontSize:"12px"}}>torres@tailwick.com</span>
-                  </p>
-                  <p>$976</p>
-                </div>
-                
-              </div>
-            </Col>
-          </Row>
-          <Row>
+            <Row>
             <Col className="rem">
               <div id="tableee">
            
          <div style={{display:"flex", float:"right",gap:"20px"}}>
-         <Button style={{ float: "right", backgroundColor: "#0d6efd", fontSize: "13px" }} variant="primary">
+         <Button onClick={handleShow} style={{ float: "right", backgroundColor: "#0d6efd", fontSize: "13px" }} variant="primary">
       <FontAwesomeIcon icon={faPlus} style={{ marginRight: '5px' }} />
       Add Campaign
-    </Button>              <input className="in"
+    </Button>             
+    
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+     <input className="in"
                         style={{float:"right"}}
         type="text"
         placeholder="Search..."
@@ -501,7 +346,7 @@ function App() {
       </div>
          </div>
               
-                <h1>Product Orders</h1>
+                <h1>Campaigns</h1>
              
                 <div class="table-responsive">
                   {" "}
@@ -814,11 +659,12 @@ function App() {
                 </div>
               </div>
             </Col>
-          </Row>
+            </Row>
+
         </Container>
-      </div>
+        </div>
     </div>
   );
 }
 
-export default App;
+export default Add;

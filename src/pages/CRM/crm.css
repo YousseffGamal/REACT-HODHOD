@@ -164,6 +164,8 @@ padding: 20px 20px !important;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); /* Adjust the values as needed */
         display: flex;
         border-radius: 20px;
+   margin-left: auto !important;
+   margin-right: auto !important;
 
       }
       .main-content .Ana svg path {
@@ -194,8 +196,7 @@ padding: 20px 20px !important;
       }
       .main-content  .numb{
         text-align: center;
-        position: relative;
-        left: 10px ;
+    
       }
       .main-content  .Ana h1{
         font-size: 1.125rem;
@@ -207,7 +208,7 @@ padding: 20px 20px !important;
       .main-content  .Ana p{
         --tw-text-opacity: 1;
         color: rgb(100 116 139 / var(--tw-text-opacity));
-        text-align: center;
+     
         margin-top: 10px;
       }
       
@@ -276,7 +277,29 @@ font-family: ExtraLight;
     height: 8px;
 }
 
+.ddds{
+    font-family: Bold !important;
+}
+.ddds span{
+    font-family: ExtraLight;
+}
+.in{
+  
+    border-radius: .375rem;
+    border-width: 1px;
+    padding: .5rem 1rem;
+    font-size: .875rem;
+    --tw-border-opacity: 1;
+    border-color: rgb(226 232 240 / var(--tw-border-opacity));
+}
     @media (max-width: 768px) {
+        .in{
+            padding: 0.5rem 0rem;
+           
+        }
+        .main-content #tableee h1{
+            margin-top: 80px;
+        }
       .sidebar {
         left: -300px;
         transition: left 0.3s ease-in-out;
