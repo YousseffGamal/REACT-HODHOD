@@ -101,13 +101,13 @@ background-color: #EA8357 !important;
 color: #E3E8EE !important;
     
 }
-.landingBtn-s{
+ .landingBtn-s{
     margin-top: 32px;
     font-size: 22px !important;
     font-family: SemiBold !important;
     transition: 0.5s !important;
 }
-.landingBtn-s:hover{
+.Landing .landingBtn-s:hover{
     background-color: transparent !important;
     color: #000000 !important;
     transition: 0.5s !important;

@@ -283,7 +283,7 @@ font-family: ExtraLight;
 .ddds span{
     font-family: ExtraLight;
 }
-.in{
+#tableee .in{
   
     border-radius: .375rem;
     border-width: 1px;
@@ -293,6 +293,11 @@ font-family: ExtraLight;
     border-color: rgb(226 232 240 / var(--tw-border-opacity));
 }
     @media (max-width: 768px) {
+      #tableee   .in{
+      width: 100%;
+
+      
+      }
         .in{
             padding: 0.5rem 0rem;
            

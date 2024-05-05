@@ -92,17 +92,103 @@ background-color: transparent !important;
         height: auto;
       }
 
-    
-      .in{
+    .feild-title{
+      color: rgba(0, 0, 0, .75);
+      font-weight: 700;
+      font-size: 16px;
   
-        border-radius: .375rem;
-        border-width: 1px;
-        padding: .5rem 1rem;
-        font-size: .875rem;
-        --tw-border-opacity: 1;
-        border-color: rgb(226 232 240 / var(--tw-border-opacity));
+
+    }
+    .the{
+      font-family: Medium;
+      font-size: 12px;
+      margin: 8px 0 0;
+    }
+    .feild-sipTitle{
+      font-family: Medium;
+      font-size: 12px;
+      margin: 8px 0 0;
+    }
+    .feild-sipTitle span{
+      color: rgba(20, 97, 204, 1);
+      
+    }
+    .colors{
+      color: rgba(20, 97, 204, 1);
+    }
+    .the-feild{
+      margin-left: auto;
+      margin-right: auto;
+      padding: 16px;
+      background-color: #ffffff;
+      width: 974px;
+      border-radius: 10px;
+    }
+    .The-input{
+      height: 45px !important;
+      /* border-radius: 1px solid #acbdd1 !important;
+      border-color: 15px !important; */
+    }
+    [type='text'], [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select {
+      appearance: none;
+      background-color: #fff;
+      border-color: #acbdd1 !important;
+      border-width: 1px;
+      border-radius: 6px !important;
+      padding-top: 0.5rem;
+      padding-right: 0.75rem;
+      padding-bottom: 0.5rem;
+      padding-left: 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      --tw-shadow: 0 0 #0000;
+  }
+    .fade-out {
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+      background-color: #e9f4fd;
+      width: 100%;
+      height: 45px;
+      padding: 10px;
+      font-family: Medium;
+      font-weight: 600;
+      border-radius: 6px !important;
+    }
+    
+    .fade-out.hidden {
+      opacity: 0;
+    }
+    .fade-out-text {
+      opacity: 1;
+      color: rgba(0, 0, 0, .75);
+
+      transition: opacity 0.9s ease-out;
+    }
+    
+    .fade-out-text.fade-out {
+      opacity: 0;
+      transition-delay: 1s; /* Delay the start of the transition */
+    }
+    
+    
+    
+    .the-feild button, [type='button'], [type='reset'], [type='submit']:hover {
+      background-color: transparent !important;
+      background-image: none !important;
+
+    }
+    .Third-feild #pixel{
+      background-color: #e5e5e5 !important;
+      color: #000000D9 !important;
+      width: 100%;
+      font-family: Medium;
+      font-size: 13px;
     }
     @media (max-width: 768px) {
+      .the-feild{
+        margin-top: 70px;
+        width: 100%;
+      }
         .in{
             padding: 0.5rem 0rem;
            

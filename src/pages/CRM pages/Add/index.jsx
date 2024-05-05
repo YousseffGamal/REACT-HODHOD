@@ -9,6 +9,7 @@ import {
   Card,
   Table,
   ProgressBar,
+  Form,
 } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
@@ -18,7 +19,7 @@ import avaF from "./images/avatar-2.png";
 import avaT from "./images/avatar-3.png";
 import avaS from "./images/avatar-4.png";
 import avaD from "./images/avatar-5.png";
-import Modal from 'react-bootstrap/Modal';
+import Modal from "react-bootstrap/Modal";
 
 import {
   faChartBar,
@@ -36,6 +37,10 @@ import Logo from "./images/Frame 2.png";
 
 function Add() {
   const [sidebarActive, setSidebarActive] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [searchText, setSearchText] = useState("");
+  const [show, setShow] = useState(false);
+  const [campaignName, setCampaignName] = useState("");
 
   const toggleSidebar = () => {
     setSidebarActive(!sidebarActive);
@@ -44,20 +49,22 @@ function Add() {
   const closeSidebar = () => {
     setSidebarActive(false);
   };
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
-  const [searchText, setSearchText] = useState('');
 
   const handleChange = (event) => {
     setSearchText(event.target.value);
   };
-  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleInputChange = (event) => {
+    setCampaignName(event.target.value);
+  };
+
   return (
     <div>
       {/* Logo */}
@@ -104,13 +111,13 @@ function Add() {
             </a>
           </li>
           <li className="nav-item">
-          <a className="nav-link active" href="#">
-  
-    <span className="vertical-align">
-        <FontAwesomeIcon icon={faPlusCircle} /> {/* Icon for "Add Campaign" */}
-    </span>
-    <span className="vertical-align ">Add Campaign</span>
-</a>
+            <a className="nav-link active" href="#">
+              <span className="vertical-align">
+                <FontAwesomeIcon icon={faPlusCircle} />{" "}
+                {/* Icon for "Add Campaign" */}
+              </span>
+              <span className="vertical-align ">Add Campaign</span>
+            </a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#" style={{ gap: "5px" }}>
@@ -209,18 +216,9 @@ function Add() {
       {/* Main Content */}
       <div className={`main-content ${sidebarActive ? "active" : ""}`}>
         <Container fluid>
-        <Row style={{ marginBottom: "20px" }}>
+          <Row style={{ marginBottom: "20px" }}>
             <Col>
               <div>
-              {/* <input
-        type="text"
-        placeholder="Search..."
-        value={searchText}
-        onChange={handleChange}
-      />
-      <div className="search">
-       
-      </div> */}
                 <div
                   style={{
                     float: "right",
@@ -231,7 +229,6 @@ function Add() {
                   }}
                 >
                   {/* Profile Image */}
-
                   {/* Bell Icon */}
                   <FontAwesomeIcon
                     icon={faBell}
@@ -309,360 +306,117 @@ function Add() {
               </div>
             </Col>
           </Row>
-            <Row>
-            <Col className="rem">
-              <div id="tableee">
-           
-         <div style={{display:"flex", float:"right",gap:"20px"}}>
-         <Button onClick={handleShow} style={{ float: "right", backgroundColor: "#0d6efd", fontSize: "13px" }} variant="primary">
-      <FontAwesomeIcon icon={faPlus} style={{ marginRight: '5px' }} />
-      Add Campaign
-    </Button>             
-    
-    <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-
-     <input className="in"
-                        style={{float:"right"}}
-        type="text"
-        placeholder="Search..."
-        value={searchText}
-        onChange={handleChange}
-      />
-      <div className="search">
-       
-      </div>
-         </div>
-              
-                <h1>Campaigns</h1>
-             
-                <div class="table-responsive">
-                  {" "}
-                  {/* Wrap the table with .table-responsive class */}
-                  <table class="table striped bordered hover">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Order ID </th>
-                        <th>Customer Name </th>
-                        <th>Location </th>
-                        <th>Order Date </th>
-                        <th>Payments </th>
-                        <th>Quantity </th>
-                        <th>Price </th>
-                        <th>Total Amount </th>
-                        <th>Status </th>
-                        <th>Action </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>01</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Data 1</td>
-                        <td>Data 2</td>
-                        <td>Data 3</td>
-                        <td>Data 4</td>
-                        <td>Data 5</td>
-                        <td>
-                          {" "}
-                          <Button
-                            style={{
-                              backgroundColor: "#d2f4ee",
-                              color: "#249782",
-                              borderColor: "#d2f4ee",
-                            }}
-                            variant="info"
-                          >
-                            Delivered
-                          </Button>{" "}
-                        </td>
-                        <td>
-                          <DropdownButton
-                            id="dropdown-basic-button"
-                            style={{ border: "none" }}
-                            title={<span style={{ color: "black" }}>...</span>}
-                          >
-                            <Dropdown.Item href="#/action-1">
-                              Overview
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">
-                              Edit
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">
-                              Delete
-                            </Dropdown.Item>
-                          </DropdownButton>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>02</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>Data 1</td>
-                        <td>Data 2</td>
-                        <td>Data 3</td>
-                        <td>Data 4</td>
-                        <td>Data 5</td>
-                        <td>
-                          {" "}
-                          <Button
-                            style={{
-                              backgroundColor: "#f3e8ff",
-                              color: "rgb(168 85 247)",
-                              borderColor: "#f3e8ff",
-                            }}
-                            variant="info"
-                          >
-                            Shipping
-                          </Button>{" "}
-                        </td>
-                        <td>
-                          <DropdownButton
-                            id="dropdown-basic-button"
-                            style={{ border: "none" }}
-                            title={<span style={{ color: "black" }}>...</span>}
-                          >
-                            <Dropdown.Item href="#/action-1">
-                              Overview
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">
-                              Edit
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">
-                              Delete
-                            </Dropdown.Item>
-                          </DropdownButton>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>03</td>
-                        <td>Larry</td>
-                        <td>@twitter</td>
-                        <td>Data 1</td>
-                        <td>Data 2</td>
-                        <td>Data 3</td>
-                        <td>Data 4</td>
-                        <td>Data 5</td>
-                        <td>Data 5</td>
-                        <td>
-                          <Button
-                            style={{
-                              backgroundColor: "#e0f2fe",
-                              color: "rgb(14 165 233)",
-                              borderColor: "#e0f2fe",
-                            }}
-                            variant="info"
-                          >
-                            New
-                          </Button>{" "}
-                        </td>
-                        <td>
-                          <DropdownButton
-                            id="dropdown-basic-button"
-                            style={{ border: "none" }}
-                            title={<span style={{ color: "black" }}>...</span>}
-                          >
-                            <Dropdown.Item href="#/action-1">
-                              Overview
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">
-                              Edit
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">
-                              Delete
-                            </Dropdown.Item>
-                          </DropdownButton>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>04</td>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>@johndoe</td>
-                        <td>Data 1</td>
-                        <td>Data 2</td>
-                        <td>Data 3</td>
-                        <td>Data 4</td>
-                        <td>Data 5</td>
-                        <td>
-                          {" "}
-                          <Button
-                            style={{
-                              backgroundColor: "#d2f4ee",
-                              color: "#249782",
-                              borderColor: "#d2f4ee",
-                            }}
-                            variant="info"
-                          >
-                            Delivered
-                          </Button>{" "}
-                        </td>
-                        <td>
-                          <DropdownButton
-                            id="dropdown-basic-button"
-                            style={{ border: "none" }}
-                            title={<span style={{ color: "black" }}>...</span>}
-                          >
-                            <Dropdown.Item href="#/action-1">
-                              Overview
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">
-                              Edit
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">
-                              Delete
-                            </Dropdown.Item>
-                          </DropdownButton>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>05</td>
-                        <td>Jane</td>
-                        <td>Smith</td>
-                        <td>@janesmith</td>
-                        <td>Data 1</td>
-                        <td>Data 2</td>
-                        <td>Data 3</td>
-                        <td>Data 4</td>
-                        <td>Data 5</td>
-                        <td>
-                          {" "}
-                          <Button
-                            style={{
-                              backgroundColor: "#fef9c3",
-                              color: "rgb(234 179 8)",
-                              borderColor: "#fef9c3",
-                            }}
-                            variant="info"
-                          >
-                            Pending
-                          </Button>{" "}
-                        </td>
-                        <td>
-                          <DropdownButton
-                            id="dropdown-basic-button"
-                            style={{ border: "none" }}
-                            title={<span style={{ color: "black" }}>...</span>}
-                          >
-                            <Dropdown.Item href="#/action-1">
-                              Overview
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">
-                              Edit
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">
-                              Delete
-                            </Dropdown.Item>
-                          </DropdownButton>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>06</td>
-                        <td>Michael</td>
-                        <td>Jordan</td>
-                        <td>@michaeljordan</td>
-                        <td>Data 1</td>
-                        <td>Data 2</td>
-                        <td>Data 3</td>
-                        <td>Data 4</td>
-                        <td>Data 5</td>
-                        <td>
-                          {" "}
-                          <Button
-                            style={{
-                              backgroundColor: "#d2f4ee",
-                              color: "#249782",
-                              borderColor: "#d2f4ee",
-                            }}
-                            variant="info"
-                          >
-                            Delivered
-                          </Button>{" "}
-                        </td>
-                        <td>
-                          <DropdownButton
-                            id="dropdown-basic-button"
-                            style={{ border: "none" }}
-                            title={<span style={{ color: "black" }}>...</span>}
-                          >
-                            <Dropdown.Item href="#/action-1">
-                              Overview
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">
-                              Edit
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">
-                              Delete
-                            </Dropdown.Item>
-                          </DropdownButton>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>07</td>
-                        <td>Maria</td>
-                        <td>Garcia</td>
-                        <td>@mariagarcia</td>
-                        <td>Data 1</td>
-                        <td>Data 2</td>
-                        <td>Data 3</td>
-                        <td>Data 4</td>
-                        <td>Data 5</td>
-                        <td>
-                          {" "}
-                          <Button
-                            style={{
-                              backgroundColor: "#e0f2fe",
-                              color: "rgb(14 165 233)",
-                              borderColor: "#e0f2fe",
-                            }}
-                            variant="info"
-                          >
-                            New
-                          </Button>{" "}
-                        </td>
-                        <td>
-                          <DropdownButton
-                            id="dropdown-basic-button"
-                            style={{ border: "none" }}
-                            title={<span style={{ color: "black" }}>...</span>}
-                          >
-                            <Dropdown.Item href="#/action-1">
-                              Overview
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">
-                              Edit
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">
-                              Delete
-                            </Dropdown.Item>
-                          </DropdownButton>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+          <Row>
+            {/* first feild */}
+            <Col>
+              <div className="the-feild">
+                <h1 className="feild-title">Campaign name</h1>
+                <Form>
+                  <Form.Group className="mb-3 mt-4" controlId="formBasicEmail">
+                    <Form.Control
+                      className="The-input"
+                      type="text"
+                      placeholder="Enter your campaign name here..."
+                      value={campaignName}
+                      onChange={handleInputChange}
+                    />
+                  
+                    {campaignName.length === 0 && (
+                      <div className="fade-out">
+                        <Form.Text className="text-muted fade-out-text">
+                          Campaign name is required
+                        </Form.Text>
+                      </div>
+                    )}
+                  </Form.Group>
+                  <Button style={{border:"none",color:"#0d6efd"}} variant="primary" type="submit">
+      Create template
+      </Button>
+                </Form>
               </div>
             </Col>
-            </Row>
+   
+          </Row>
+          <Row>
+            {/* second Second */}
+            <Col className="mt-5">
+              <div className="the-feild">
+                <h1 className="feild-title">Special ad categories</h1>
+                <p className="feild-sipTitle">
+                        Declare if your ads are related to credit, employment or housing, or about social issues, elections or politics. Requirements differ by country. <span style={{color:"rgba(20, 97, 204, 1);"}}>Learn more</span>
 
+                        </p>
+                <Form>
+                  <Form.Group className="mb-3 mt-4" controlId="formBasicEmail">
+                    <h1 className="feild-title">Categories</h1>
+                    <p className="the mb-3">
+                    Select the categories that best describe what this campaign will advertise.
+
+                    </p>
+                    <Form.Select style={{border:"1px solid red ",borderRadius:"6px "}} aria-label="Default select example">
+      <option>Open this select menu</option>
+      <option value="1">Credit</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </Form.Select>
+                  
+               
+                   
+                  
+                  </Form.Group>
+      
+                </Form>
+              </div>
+            </Col>
+   
+          </Row>
+          <Row>
+            {/* third feild */}
+            <Col className="mt-5 Third-feild">
+              <div className="the-feild">
+                <h1 className="feild-title">Conversion</h1>
+                <h1 style={{fontSize:"14px"}} className="feild-title mt-4">Conversion location</h1>
+                <p className="feild-sipTitle">
+                Choose where you want to drive sales.<span style={{color:"rgba(20, 97, 204, 1);"}}>Learn more</span>
+
+                        </p>
+                <Form>
+                  <Form.Group className="mb-3 mt-4" controlId="formBasicEmail">
+             
+   
+
+
+
+        <Form.Check checked type="checkbox" label="Website" />
+        <Form.Check disabled type="checkbox" className="mt-3" label="Website and app
+" />
+   
+   
+   <h1 className="feild-title mt-4 mb-1 p-1">Pixel</h1>
+       
+                      <div className="fade-out">
+                  
+
+                        <Form.Text style={{fontSize:"13px"}} className="text-muted fade-out-text ">
+                        The Meta pixel is required. To publish, set up your pixel or switch to a different 
+                        optimisation, such as landing page views. <br /> <span className="colors" style={{color:"rgba(20, 97, 204, 1);"}}>Learn more about Meta pixel</span>
+                        </Form.Text>
+                      </div>
+               
+                  </Form.Group>
+            <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+            <Button id="pixel" style={{border:"none",color:"#0d6efd"}} variant="primary" type="submit">
+                  Create Pixel
+      </Button>
+            </div>
+                </Form>
+              </div>
+            </Col>
+   
+          </Row>
+          
         </Container>
-        </div>
+      </div>
     </div>
   );
 }

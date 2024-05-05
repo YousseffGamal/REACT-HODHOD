@@ -485,7 +485,7 @@ function App() {
             <Col className="rem">
               <div id="tableee">
            
-         <div style={{display:"flex", float:"right",gap:"20px"}}>
+         <div className="ch" style={{display:"flex", float:"right",gap:"20px"}}>
          <Button style={{ float: "right", backgroundColor: "#0d6efd", fontSize: "13px" }} variant="primary">
       <FontAwesomeIcon icon={faPlus} style={{ marginRight: '5px' }} />
       Add Campaign
